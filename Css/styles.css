@@ -1,0 +1,201 @@
+:root {
+    /* Fonts */
+    --font-main: 'Science', sans-serif;
+
+    /* Colors */
+    --color-white-bright: rgba(255, 255, 255, 0.8);
+    --color-white-dark: rgba(255, 255, 255, 0.5);
+    --color-black: rgba(0, 0, 0, 0.8);
+    --color-red: rgba(255, 0, 0, 0.5);
+    --color-blue: rgba(0, 200, 255, 0.5);
+    --color-dark: rgba(45, 45, 45, 0.8);
+
+    /* Font Sizes */
+    --size-large: 1.5em;
+    --size-medium: 1em;
+
+    /* Spacing */
+    --gap-small: 0.5em;
+    --gap-medium: 1em;
+    --padding-small: 0.5em;
+    --padding-medium: 2em;
+
+    /* Border Radius */
+    --radius-default: 1em;
+
+    /* Backgrounds */
+    --bg-blured: rgba(255, 255, 255, 0.2);
+
+    /* Blurs */
+    --blur-default: 10px;
+}
+
+@font-face {
+    font-family: Science;
+    src: url(../Assets/Fonts/Science_Gothic/ScienceGothic-SemiBold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+
+    /* Pour centrer ou non le jeu de dans la page */
+    /* min-height: 100vh; */ 
+    
+    background-image: url(../Assets/Images/Pictures/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#game-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--gap-medium);
+
+    padding: var(--padding-medium);
+    border-radius: var(--radius-default);
+
+    background: var(--bg-blured);
+    backdrop-filter: blur(var(--blur-default));
+}
+
+#section-cookie,
+#panel-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-medium);
+}
+
+#cookie-count {
+    padding-bottom: var(--gap-small);
+    font-size: var(--size-large);
+    color: var(--color-white-bright);
+
+    width: 6ch;
+    text-align: center;
+}
+
+#cookie-per-click,
+#cookie-per-second {
+    font-size: var(--size-medium);
+    color: var(--color-black);
+    width: 16ch;
+    text-align: center;
+}
+
+#cookie {
+    width: 9em;
+    height: 9em;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#section-separator {
+    width: 1px;
+    background: var(--color-white-dark);
+    border: none;
+}
+
+#section-upgrades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-medium);
+}
+
+#upgrade-title {
+    font-size: var(--size-large);
+    color: var(--color-white-bright);
+}
+
+#upgrades-btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-medium);
+}
+
+#setting-btn-wrapper {
+    display: flex;
+    gap: var(--gap-medium);
+    justify-content: space-between;
+    width: 100%;
+    margin-top: var(--gap-medium);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+
+    padding: var(--padding-small);
+    border-radius: var(--radius-default);
+    gap: var(--gap-medium);
+}
+
+.btn-setting {
+    padding: var(--padding-small) 1em;
+    background: var(--color-blue);
+    border-radius: var(--radius-default);
+    backdrop-filter: blur(var(--blur-default));
+}
+
+#reset {
+    background: var(--color-red);
+    border-radius: var(--radius-default);
+    backdrop-filter: blur(var(--blur-default));
+}
+
+.upgrade-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+
+    background: var(--color-white-dark);
+    border-radius: var(--radius-default);
+    backdrop-filter: blur(var(--blur-default));
+}
+
+.upgrade-btn img {
+    width: 2em;
+    height: 2em;
+}
+
+.count {
+    min-width: 3ch;
+    text-align: right;
+    font-size: var(--size-large);
+    color: var(--color-white-bright);
+}
+
+.upgrade-name {
+    font-size: var(--size-medium);
+    color: var(--color-white-bright);
+}
+
+.cost {
+    color: var(--color-dark);
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
