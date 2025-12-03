@@ -24,7 +24,7 @@ const save = document.getElementById('save');
 
 let cookie = 0;
 
-let cookiePerClickValue = 133;
+let cookiePerClickValue = 1;
 let cookiePerSecondValue = 0;
 
 // = = = = = = = = = = = = = = = //
@@ -65,8 +65,8 @@ function CalculerPrixAssistant() {
 
 function CalculerPrixForce() {
     const base = 200;
-    const alpha = 0.25;
-    const beta = 1.05;
+    const alpha = 0.20;
+    const beta = 1.10;
     const prix = base * Math.pow(1 + alpha, Math.pow(cookiePerClickValue, beta));
     return Math.round(prix);
 }
